@@ -28,7 +28,7 @@ command = [
     "-m",
     "nuitka",
     main_path,
-    "--disable-cache=all",  # !!!
+    "--disable-cache=all",  # !!!!
     "--enable-plugin=pyside6",
     f"--include-data-dir={resources_dir}=resources",
     "--macos-create-app-bundle",
