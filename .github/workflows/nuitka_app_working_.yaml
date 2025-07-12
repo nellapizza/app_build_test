@@ -1,4 +1,4 @@
-name: Test Nuitka App
+name: Test Nuitka App Working
 
 on:
   workflow_dispatch:
