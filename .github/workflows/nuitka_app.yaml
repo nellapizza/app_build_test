@@ -1,3 +1,8 @@
+name: Test Nuitka App
+
+on:
+  workflow_dispatch:
+
 jobs:
   build:
     strategy:
