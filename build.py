@@ -40,4 +40,4 @@ command = [
 ]
 print(f"\n{" ".join(command)}\n")
 print(out_dir)
-subprocess.check_output(command, cwd=out_dir)
+# subprocess.check_output(command, cwd=out_dir)
