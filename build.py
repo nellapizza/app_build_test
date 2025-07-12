@@ -7,12 +7,13 @@ WINDOWS = "Windows"
 MAC_OS = "Darwin"
 LINUX = "Linux"
 
-repo_dir = os.path.dirname(os.path.dirname(__file__))
+repo_dir = os.path.dirname(__file__)
 out_dir = os.path.join(
     repo_dir,
-    "build",
-    "built",
+    "build_",
 )
+shutil.rmtree(out_dir, ignore_errors=True)
+os.makedirs(out_dir, exist_ok=True)
 resources_dir = os.path.join(repo_dir, "resources")
 if platform.system() == WINDOWS:
     python_path = os.path.join(repo_dir, ".venv", "Scripts", "python.exe")
@@ -22,7 +23,6 @@ else:
     assert False
 main_path = os.path.join(repo_dir, "app.py")
 icon_path = os.path.join(resources_dir, "images", "icon.png")
-shutil.rmtree(out_dir, ignore_errors=True)
 command = [
     python_path,
     "-m",
@@ -39,4 +39,5 @@ command = [
     f"--windows-icon-from-ico={icon_path}",
 ]
 print(f"\n{" ".join(command)}\n")
+print(out_dir)
 subprocess.check_output(command, cwd=out_dir)
