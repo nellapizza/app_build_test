@@ -7,7 +7,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest]
 
     runs-on: ${{ matrix.os }}
 
@@ -35,9 +35,7 @@ jobs:
           mode: app
           enable-plugins: pyside6
           include-data-dir: resources=resources
-          macos-create-app-bundle:
           macos-app-icon: resources/images/icon.png
-          show-scons:
           windows-console-mode: disable
           windows-icon-from-ico: resources/images/icon.png
       - name: Upload Artifacts
